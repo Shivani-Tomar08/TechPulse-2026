@@ -141,4 +141,4 @@ TechPulse-2026/
 
 **Shivani Tomar**
 Final Year IT Student · Data Systems Analyst
-[GitHub](https://github.com/Shivani-Tomar08) · [LinkedIn](#)
+[GitHub](https://github.com/Shivani-Tomar08) · [LinkedIn](#linkedin.com/in/shivani-tomar-1003st)
