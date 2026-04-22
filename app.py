@@ -20,8 +20,8 @@ st.markdown("""
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
-    background-color: #0a0f1e;
-    color: #e2e8f0;
+    background-color: #020d14;
+    color: #caf0f8;
 }
 
 h1, h2, h3 { font-family: 'Space Mono', monospace; }
@@ -30,8 +30,8 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
 
 /* KPI Cards */
 .kpi-card {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid #1e3a5f;
+    background: linear-gradient(135deg, #020d14 0%, #0a2535 100%);
+    border: 1px solid #0e4d6b;
     border-radius: 12px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 0.5rem;
@@ -41,24 +41,24 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #64748b;
+    color: #4a9eba;
     margin-bottom: 0.4rem;
 }
 .kpi-value {
     font-family: 'Space Mono', monospace;
     font-size: 2rem;
     font-weight: 700;
-    color: #f1f5f9;
+    color: #caf0f8;
     line-height: 1;
 }
 .kpi-sub {
     font-size: 0.75rem;
-    color: #475569;
+    color: #2a6d8a;
     margin-top: 0.3rem;
 }
 .kpi-badge-red   { color: #f87171; font-weight: 600; }
-.kpi-badge-green { color: #34d399; font-weight: 600; }
-.kpi-badge-blue  { color: #60a5fa; font-weight: 600; }
+.kpi-badge-green { color: #00e5cc; font-weight: 600; }
+.kpi-badge-blue  { color: #00d4e8; font-weight: 600; }
 
 /* Section headers */
 .section-header {
@@ -66,27 +66,27 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #94a3b8;
-    border-left: 3px solid #3b82f6;
+    color: #7ecfd4;
+    border-left: 3px solid #00d4e8;
     padding-left: 0.75rem;
     margin: 1.8rem 0 1rem 0;
 }
 
 /* Insight box */
 .insight-box {
-    background: linear-gradient(135deg, #0f2027, #1a3a4a);
-    border: 1px solid #0ea5e9;
+    background: linear-gradient(135deg, #021018, #0a2d3d);
+    border: 1px solid #00d4e8;
     border-radius: 10px;
     padding: 1rem 1.2rem;
     font-size: 0.85rem;
-    color: #bae6fd;
+    color: #90e0ef;
     margin-top: 0.5rem;
 }
 
 /* Company card */
 .company-card {
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: #021018;
+    border: 1px solid #0e4d6b;
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 0.5rem;
@@ -94,8 +94,8 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: #060c1a;
-    border-right: 1px solid #1e293b;
+    background: #010a10;
+    border-right: 1px solid #0e3d4d;
 }
 
 /* Plotly chart background fix */
@@ -111,8 +111,8 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
 /* Tag chips */
 .tag-chip {
     display: inline-block;
-    background: #1e3a5f;
-    color: #60a5fa;
+    background: #0a2d3d;
+    color: #00d4e8;
     border-radius: 20px;
     padding: 2px 10px;
     font-size: 0.72rem;
@@ -122,12 +122,12 @@ h1, h2, h3 { font-family: 'Space Mono', monospace; }
 </style>
 """, unsafe_allow_html=True)
 
-# ─── PLOTLY DARK TEMPLATE ────────────────────────────────────────────────────
+# ─── PLOTLY OCEAN TEMPLATE ───────────────────────────────────────────────────
 CHART_BG   = "rgba(0,0,0,0)"
 PAPER_BG   = "rgba(0,0,0,0)"
-GRID_COLOR = "#1e293b"
-FONT_COLOR = "#94a3b8"
-ACCENT     = ["#3b82f6", "#f87171", "#34d399", "#fbbf24", "#a78bfa", "#fb923c", "#22d3ee"]
+GRID_COLOR = "#0e3d4d"
+FONT_COLOR = "#7ecfd4"
+ACCENT     = ["#00d4e8", "#00a8b5", "#0077a8", "#00e5cc", "#0099cc", "#00b4d8", "#48cae4"]
 
 def apply_dark(fig, height=320):
     fig.update_layout(
@@ -162,7 +162,7 @@ df_full = load_data()
 # ─── SIDEBAR ─────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### 🛡️ TechPulse 2026")
-    st.markdown("<div style='font-size:0.72rem;color:#475569;margin-bottom:1rem;'>Workforce Intelligence Platform</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:0.72rem;color:#2a6d8a;margin-bottom:1rem;'>Workforce Intelligence Platform</div>", unsafe_allow_html=True)
     st.divider()
 
     all_industries = sorted(df_full['industry'].dropna().unique().tolist())
@@ -177,7 +177,7 @@ with st.sidebar:
     ai_filter = st.selectbox("AI-Related Filter", ["All", "Yes", "No", "Partial"])
 
     st.divider()
-    st.markdown("<div style='font-size:0.72rem;color:#475569;'>Shivani Tomar · Data Systems Analyst<br>Dataset: Tech Layoffs 2025–2026</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:0.72rem;color:#2a6d8a;'>Shivani Tomar · Data Systems Analyst<br>Dataset: Tech Layoffs 2025–2026</div>", unsafe_allow_html=True)
 
 # ─── APPLY FILTERS ───────────────────────────────────────────────────────────
 df = df_full.copy()
@@ -196,7 +196,7 @@ if df.empty:
 
 # ─── HEADER ──────────────────────────────────────────────────────────────────
 st.markdown("# TechPulse 2026")
-st.markdown("<div style='color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;'>Real-time workforce intelligence · Tech sector layoff analysis</div>", unsafe_allow_html=True)
+st.markdown("<div style='color:#2a6d8a;font-size:0.9rem;margin-bottom:1.5rem;'>Real-time workforce intelligence · Tech sector layoff analysis</div>", unsafe_allow_html=True)
 
 # ─── KPI ROW ─────────────────────────────────────────────────────────────────
 total_laid_off   = int(df['employees_laid_off'].sum())
@@ -255,12 +255,12 @@ with col_t1:
     fig_timeline = go.Figure()
     fig_timeline.add_trace(go.Bar(
         x=timeline_df['Month'], y=timeline_df['Laid Off'],
-        marker_color='#3b82f6', marker_line_width=0,
+        marker_color='#00d4e8', marker_line_width=0,
         name='Layoffs', opacity=0.85
     ))
     fig_timeline.add_trace(go.Scatter(
         x=timeline_df['Month'], y=timeline_df['Laid Off'],
-        mode='lines', line=dict(color='#60a5fa', width=2),
+        mode='lines', line=dict(color='#48cae4', width=2),
         name='Trend'
     ))
     fig_timeline = apply_dark(fig_timeline, height=280)
@@ -272,10 +272,10 @@ with col_t2:
     worst_company = df.loc[df['employees_laid_off'].idxmax()]
     st.markdown(f"""<div class='insight-box'>
         <b>📌 Peak Month</b><br>{peak_month['Month']}<br>
-        <span style='font-size:1.1rem;font-weight:700;color:#f1f5f9'>{int(peak_month['Laid Off']):,}</span> roles cut<br><br>
+        <span style='font-size:1.1rem;font-weight:700;color:#caf0f8'>{int(peak_month['Laid Off']):,}</span> roles cut<br><br>
         <b>📌 Single Largest Layoff</b><br>{worst_company['company']}<br>
-        <span style='font-size:1.1rem;font-weight:700;color:#f1f5f9'>{int(worst_company['employees_laid_off']):,}</span> employees<br>
-        <span style='color:#64748b;font-size:0.75rem;'>{worst_company['industry']} · {worst_company['date'].strftime('%b %Y')}</span>
+        <span style='font-size:1.1rem;font-weight:700;color:#caf0f8'>{int(worst_company['employees_laid_off']):,}</span> employees<br>
+        <span style='color:#2a6d8a;font-size:0.75rem;'>{worst_company['industry']} · {worst_company['date'].strftime('%b %Y')}</span>
     </div>""", unsafe_allow_html=True)
 
 # ─── SECTION 2: SECTOR + AI BREAKDOWN ────────────────────────────────────────
@@ -290,23 +290,23 @@ with col_s1:
         orientation='h',
         marker=dict(
             color=sector_df['employees_laid_off'],
-            colorscale=[[0, '#1e3a5f'], [1, '#3b82f6']],
+            colorscale=[[0, '#0a2d3d'], [1, '#00d4e8']],
             showscale=False
         )
     ))
     fig_sector = apply_dark(fig_sector, height=320)
-    fig_sector.update_layout(title=dict(text="Top Sectors by Headcount", font=dict(size=12, color='#94a3b8')))
+    fig_sector.update_layout(title=dict(text="Top Sectors by Headcount", font=dict(size=12, color='#7ecfd4')))
     st.plotly_chart(fig_sector, use_container_width=True)
 
 with col_s2:
     ai_df = df.groupby('ai_related')['employees_laid_off'].sum().reset_index()
     fig_ai = px.pie(ai_df, names='ai_related', values='employees_laid_off',
                     hole=0.65,
-                    color_discrete_map={'Yes': '#3b82f6', 'No': '#1e3a5f', 'Partial': '#0ea5e9'})
+                    color_discrete_map={'Yes': '#00d4e8', 'No': '#0a2d3d', 'Partial': '#0099cc'})
     fig_ai.update_traces(textposition='outside', textinfo='percent+label')
     fig_ai = apply_dark(fig_ai, height=320)
     fig_ai.update_layout(
-        title=dict(text="AI as Cause", font=dict(size=12, color='#94a3b8')),
+        title=dict(text="AI as Cause", font=dict(size=12, color='#7ecfd4')),
         showlegend=False
     )
     st.plotly_chart(fig_ai, use_container_width=True)
@@ -316,10 +316,10 @@ with col_s3:
     fig_reason = go.Figure(go.Bar(
         x=reason_df['employees_laid_off'], y=reason_df['reason'],
         orientation='h',
-        marker_color='#a78bfa', marker_line_width=0
+        marker_color='#00b4d8', marker_line_width=0
     ))
     fig_reason = apply_dark(fig_reason, height=320)
-    fig_reason.update_layout(title=dict(text="Top Layoff Reasons", font=dict(size=12, color='#94a3b8')))
+    fig_reason.update_layout(title=dict(text="Top Layoff Reasons", font=dict(size=12, color='#7ecfd4')))
     st.plotly_chart(fig_reason, use_container_width=True)
 
 # ─── SECTION 3: WORKFORCE IMPACT DEPTH ───────────────────────────────────────
@@ -328,38 +328,36 @@ st.markdown("<div class='section-header'>03 · Workforce Impact Depth</div>", un
 col_d1, col_d2 = st.columns([5, 5])
 
 with col_d1:
-    # Scatter: Company size vs % cut
     fig_scatter = px.scatter(
         df,
         x='total_employees', y='percentage_workforce',
         size='employees_laid_off', color='ai_related',
         hover_name='company',
         hover_data={'industry': True, 'employees_laid_off': True},
-        color_discrete_map={'Yes': '#3b82f6', 'No': '#f87171', 'Partial': '#fbbf24'},
+        color_discrete_map={'Yes': '#00d4e8', 'No': '#f87171', 'Partial': '#00e5cc'},
         labels={'total_employees': 'Company Size', 'percentage_workforce': '% Workforce Cut'}
     )
     fig_scatter = apply_dark(fig_scatter, height=320)
     fig_scatter.update_layout(
-        title=dict(text="Company Size vs. % Workforce Cut (bubble = headcount)", font=dict(size=12, color='#94a3b8')),
+        title=dict(text="Company Size vs. % Workforce Cut (bubble = headcount)", font=dict(size=12, color='#7ecfd4')),
         legend_title_text="AI-Related"
     )
     fig_scatter.update_xaxes(type='log')
     st.plotly_chart(fig_scatter, use_container_width=True)
 
 with col_d2:
-    # Severance by industry
     sev_df = df.groupby('industry')['severance_weeks'].mean().reset_index().sort_values('severance_weeks', ascending=False)
     fig_sev = go.Figure(go.Bar(
         x=sev_df['industry'], y=sev_df['severance_weeks'],
         marker=dict(
             color=sev_df['severance_weeks'],
-            colorscale=[[0, '#1e3a5f'], [1, '#34d399']],
+            colorscale=[[0, '#0a2d3d'], [1, '#00e5cc']],
             showscale=False
         )
     ))
     fig_sev = apply_dark(fig_sev, height=320)
     fig_sev.update_layout(
-        title=dict(text="Average Severance Weeks by Industry", font=dict(size=12, color='#94a3b8')),
+        title=dict(text="Average Severance Weeks by Industry", font=dict(size=12, color='#7ecfd4')),
         xaxis_tickangle=-35
     )
     st.plotly_chart(fig_sev, use_container_width=True)
@@ -370,7 +368,6 @@ st.markdown("<div class='section-header'>04 · Department & Geography</div>", un
 col_g1, col_g2 = st.columns([5, 5])
 
 with col_g1:
-    # Department parsing (comma-separated values)
     dept_series = df['department'].dropna().str.split(',').explode().str.strip()
     dept_df = dept_series.value_counts().reset_index()
     dept_df.columns = ['Department', 'Count']
@@ -378,10 +375,10 @@ with col_g1:
     fig_dept = go.Figure(go.Bar(
         x=dept_df['Count'], y=dept_df['Department'],
         orientation='h',
-        marker_color='#fbbf24', marker_line_width=0
+        marker_color='#0099cc', marker_line_width=0
     ))
     fig_dept = apply_dark(fig_dept, height=320)
-    fig_dept.update_layout(title=dict(text="Most Impacted Departments", font=dict(size=12, color='#94a3b8')))
+    fig_dept.update_layout(title=dict(text="Most Impacted Departments", font=dict(size=12, color='#7ecfd4')))
     st.plotly_chart(fig_dept, use_container_width=True)
 
 with col_g2:
@@ -390,12 +387,12 @@ with col_g2:
         x=country_df['country'], y=country_df['employees_laid_off'],
         marker=dict(
             color=country_df['employees_laid_off'],
-            colorscale=[[0, '#1e3a5f'], [1, '#f87171']],
+            colorscale=[[0, '#0a2d3d'], [1, '#00d4e8']],
             showscale=False
         )
     ))
     fig_country = apply_dark(fig_country, height=320)
-    fig_country.update_layout(title=dict(text="Layoffs by Country", font=dict(size=12, color='#94a3b8')))
+    fig_country.update_layout(title=dict(text="Layoffs by Country", font=dict(size=12, color='#7ecfd4')))
     st.plotly_chart(fig_country, use_container_width=True)
 
 # ─── SECTION 5: COMPANY DRILL-DOWN ───────────────────────────────────────────
@@ -411,24 +408,24 @@ if company_query:
         st.info("No matching company found in current filter selection.")
     else:
         for _, row in result.iterrows():
-            ai_color = "#3b82f6" if row['ai_related'] == 'Yes' else ("#fbbf24" if row['ai_related'] == 'Partial' else "#f87171")
+            ai_color = "#00d4e8" if row['ai_related'] == 'Yes' else ("#00e5cc" if row['ai_related'] == 'Partial' else "#f87171")
             st.markdown(f"""<div class='company-card'>
                 <div style='display:flex;justify-content:space-between;align-items:center;'>
                     <div>
-                        <span style='font-family:Space Mono,monospace;font-size:1rem;font-weight:700;color:#f1f5f9;'>{row['company']}</span>
+                        <span style='font-family:Space Mono,monospace;font-size:1rem;font-weight:700;color:#caf0f8;'>{row['company']}</span>
                         <span class='tag-chip' style='margin-left:8px;'>{row['industry']}</span>
                         <span class='tag-chip'>{row['country']}</span>
                         <span class='tag-chip' style='color:{ai_color};border-color:{ai_color};'>AI: {row['ai_related']}</span>
                     </div>
                     <div style='font-family:Space Mono,monospace;font-size:1.4rem;font-weight:700;color:#f87171;'>{int(row['employees_laid_off']):,} roles</div>
                 </div>
-                <div style='margin-top:0.6rem;display:flex;gap:2rem;font-size:0.8rem;color:#64748b;'>
+                <div style='margin-top:0.6rem;display:flex;gap:2rem;font-size:0.8rem;color:#2a6d8a;'>
                     <span>📅 {row['date'].strftime('%d %b %Y')}</span>
                     <span>📉 {row['percentage_workforce']}% workforce</span>
                     <span>💼 {row['severance_weeks']} weeks severance</span>
                     <span>🏢 {int(row['total_employees']):,} total employees</span>
                 </div>
-                <div style='margin-top:0.5rem;font-size:0.8rem;color:#94a3b8;'>
+                <div style='margin-top:0.5rem;font-size:0.8rem;color:#7ecfd4;'>
                     <b>Reason:</b> {row['reason']} &nbsp;|&nbsp; <b>Departments:</b> {row['department']}
                 </div>
             </div>""", unsafe_allow_html=True)
@@ -445,12 +442,12 @@ with col_q1:
         x=q_df['label'], y=q_df['employees_laid_off'],
         marker=dict(
             color=q_df['employees_laid_off'],
-            colorscale=[[0, '#1e3a5f'], [1, '#3b82f6']],
+            colorscale=[[0, '#0a2d3d'], [1, '#00d4e8']],
             showscale=False
         )
     ))
     fig_q = apply_dark(fig_q, height=260)
-    fig_q.update_layout(title=dict(text="Total Layoffs per Quarter", font=dict(size=12, color='#94a3b8')))
+    fig_q.update_layout(title=dict(text="Total Layoffs per Quarter", font=dict(size=12, color='#7ecfd4')))
     st.plotly_chart(fig_q, use_container_width=True)
 
 with col_q2:
@@ -485,7 +482,7 @@ with st.expander("📋 Full Dataset View"):
 # ─── FOOTER ──────────────────────────────────────────────────────────────────
 st.divider()
 st.markdown("""
-<div style='text-align:center;font-size:0.72rem;color:#334155;padding:1rem 0;'>
+<div style='text-align:center;font-size:0.72rem;color:#0e3d4d;padding:1rem 0;'>
     TechPulse 2026 · Built by Shivani Tomar · Data Systems Analyst<br>
     Dataset covers 35 companies · 2025–2026 · For portfolio and research purposes
 </div>
